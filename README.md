@@ -3,7 +3,7 @@
 The JSON data set represents the email activity of customers during a campaign.
 PS: Please make necessary assumptions where necessary 
 
-DELIVERABLES:
+<b>DELIVERABLES</b>:
 1) Script to load the data
 2) Table(s) design 
 3) Assumptions
