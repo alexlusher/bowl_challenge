@@ -1,2 +1,2 @@
-# bowl_challenge
+# JSON_Parser
 This is a demo project
