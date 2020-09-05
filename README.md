@@ -14,9 +14,7 @@ PS: Please make necessary assumptions where necessary
 5) Dockerize the solution
 6) Any test cases you can think of?
 
-The following parameters can be subject to A/B testing:
-
-RESPONSE:
+RESPONSE: The following parameters can be subject to A/B testing:
 
 -	Subject line (Length, Topic, Personalization)
 -	Pre-header (Inclusion, Content)
@@ -28,9 +26,7 @@ RESPONSE:
 7) How would you design it if it was streaming data?
 8) Any other insights you can derive from the data 
 
-RESPONSE:
-
-EMAIL CAMPAIGN FUNNEL
+RESPONSE: The following metrics can be captured to measure email campaign funnel
 - #1: Number of emails delivered.
 - #2: Number of emails opened.
 - #3: Click-through rate.
