@@ -27,3 +27,11 @@ email_sent DATETIME NULL,
 email_opened DATETIME NULL,
 email_url_clicked DATETIME NULL,
 user_subscribed DATETIME NULL);
+
+# This table contains ip ranges to resolve IP address
+CREATE TABLE ip_resolution (
+ip_range_start TEXT NOT NULL,
+ip_range_end TEXT NOT NULL,
+city TEXT NOT NULL,
+country TEXT NOT NULL,
+telecom TEXT NOT NULL);
