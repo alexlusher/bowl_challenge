@@ -9,7 +9,7 @@ DELIVERABLES:
 3) Assumptions
 4) Write SQL to answer the following questions (Use the tables designed above) 
    - Get emails of users who opened email
-   - # No. of users who opened emails between 1-2 days, 2-5 days and > 5 days after email is sent. Example: If the email is sent 21st, # of users who opened email between 23rd and 26th including both 23rd and 26th
+   - Number of users who opened emails between 1-2 days, 2-5 days and > 5 days after email is sent. Example: If the email is sent 21st, # of users who opened email between 23rd and 26th including both 23rd and 26th
    - Identify the campaign which is more successful? (Define what you think success means and write SQL) 
 5) Dockerize the solution
 6) Any test cases you can think of?
