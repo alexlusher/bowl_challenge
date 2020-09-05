@@ -13,8 +13,27 @@ PS: Please make necessary assumptions where necessary
    - Identify the campaign which is more successful? (Define what you think success means and write SQL) 
 5) Dockerize the solution
 6) Any test cases you can think of?
+
+The following parameters can be subject to A/B testing
+•	Subject line (Length, Topic, Personalization)
+•	Pre-header (Inclusion, Content)
+•	Day or time (Day of week, time)
+•	Call to action (Copy, color)
+•	Content (positive, specific or generic)
+
+
 7) How would you design it if it was streaming data?
 8) Any other insights you can derive from the data 
+
+EMAIL CAMPAIGN FUNNEL
+#1: Number of emails delivered.
+#2: Number of emails opened.
+#3: Click-through rate.
+#4: Click-to-open rate.
+#5: Unsubscribe rate.
+#6: Bounce rate
+#7: Spam complaints 
+
 
 <b>ASSUMPTIONS</b>:
 
