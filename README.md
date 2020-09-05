@@ -26,6 +26,7 @@ PS: Please make necessary assumptions where necessary
 7) How would you design it if it was streaming data?
 
 <b>RESPONSE: If latency is an issue, then Kafka streaming is more appropriate than Spark streaming. Otherwise, Spark streaming would be best.</b>
+
 The Spark-based solution for data stream would be a microservice with REST API where JSON data are processed by Spark and the processed data would be stored in datastore.
 The Python code would be adapted for PySpark.
 
