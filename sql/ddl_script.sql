@@ -2,7 +2,8 @@
 
 CREATE TABLE users (
 user_id TEXT NOT NULL,
-email_address TEXT NOT NULL);
+email_address TEXT NOT NULL,
+email_unsubscribed INTEGER NULL);
 
 
 # This table contains a list of all campaigns
@@ -20,6 +21,8 @@ user_id TEXT NOT NULL,
 browser TEXT NULL,
 email_sent DATE NULL,
 email_delivered DATE NULL,
+email_bounced INTEGER NULL,
+email_unsubscribed INTEGER NULL,
 email_opened DATE NULL,
 email_url_clicked DATE NULL,
 user_subscribed DATE NULL);
