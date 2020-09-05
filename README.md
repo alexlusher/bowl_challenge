@@ -22,6 +22,8 @@ For the purpose of this exercise, SQLiteDB will be used as a backend
 
 <b>DIRECTORY STRUCTURE</b>:
 
-config
-sql
-unittests
+- config
+- sql
+- unittests
+
+
