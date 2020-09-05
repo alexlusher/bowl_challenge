@@ -14,12 +14,13 @@ PS: Please make necessary assumptions where necessary
 5) Dockerize the solution
 6) Any test cases you can think of?
 
-The following parameters can be subject to A/B testing
-•	Subject line (Length, Topic, Personalization)
-•	Pre-header (Inclusion, Content)
-•	Day or time (Day of week, time)
-•	Call to action (Copy, color)
-•	Content (positive, specific or generic)
+The following parameters can be subject to A/B testing:
+
+-	Subject line (Length, Topic, Personalization)
+-	Pre-header (Inclusion, Content)
+-	Day or time (Day of week, time)
+-	Call to action (Copy, color)
+-	Content (positive, specific or generic)
 
 
 7) How would you design it if it was streaming data?
