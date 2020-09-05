@@ -16,10 +16,10 @@ DELIVERABLES:
 7) How would you design it if it was streaming data?
 8) Any other insights you can derive from the data 
 
-ASSUMPTIONS:
-•	For the purpose of this exercise, SQLiteDB will be used as a backend
+<b>ASSUMPTIONS</b>
+For the purpose of this exercise, SQLiteDB will be used as a backend
 
-DIRECTORY STRUCTURE:
-•	config
-•	sql
-•	unittests
+<b>DIRECTORY STRUCTURE</b>
+config
+sql
+unittests
