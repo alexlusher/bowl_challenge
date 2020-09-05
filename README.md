@@ -1,4 +1,4 @@
-PROBLEM DESCRIPTION:
+<b>PROBLEM DESCRIPTION</b>:
 
 The JSON data set represents the email activity of customers during a campaign.
 PS: Please make necessary assumptions where necessary 
