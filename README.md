@@ -17,9 +17,11 @@ DELIVERABLES:
 8) Any other insights you can derive from the data 
 
 <b>ASSUMPTIONS</b>:
+
 For the purpose of this exercise, SQLiteDB will be used as a backend
 
 <b>DIRECTORY STRUCTURE</b>:
+
 config
 sql
 unittests
