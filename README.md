@@ -8,9 +8,9 @@ PS: Please make necessary assumptions where necessary
 2) Table(s) design 
 3) Assumptions
 
-<b>ASSUMPTIONS MADE</b>:
-1) This solution is not for real-time processing and therefore it is not uses streaming
-2) The email campaign is provided in JSON files. Each JSON file contains all campaign responses.
+&nbsp;&nbsp;&nbsp;&nbsp; <b>ASSUMPTIONS MADE</b>:
+&nbsp;&nbsp;&nbsp;&nbsp; 1) This solution is not for real-time processing and therefore it is not uses streaming
+&nbsp;&nbsp;&nbsp;&nbsp; 2) The email campaign is provided in JSON files. Each JSON file contains all campaign responses.
 
 4) Write SQL to answer the following questions (Use the tables designed above) 
    - Get emails of users who opened email
