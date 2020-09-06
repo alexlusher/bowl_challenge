@@ -9,8 +9,10 @@ PS: Please make necessary assumptions where necessary
 3) Assumptions
 
     <b>ASSUMPTIONS MADE</b>:
-    1) This solution is not for real-time processing and therefore it is not uses streaming
-    2) The email campaign is provided in JSON files. Each JSON file contains all campaign responses.
+    1) This solution is not for real-time processing and therefore does not streaming
+    2) Each email campaign is provided in JSON files. Each JSON file contains responses for a single campaign. 
+    In case of additional responses for the same campaign, they will be upserted into the database
+    3) This solution uses SQLiteDB for portability purposes. In production, it would be replaced with a full-scale RDBMS
 
 4) Write SQL to answer the following questions (Use the tables designed above) 
    - Get emails of users who opened email
