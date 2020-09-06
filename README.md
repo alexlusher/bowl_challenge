@@ -7,6 +7,11 @@ PS: Please make necessary assumptions where necessary
 1) Script to load the data
 2) Table(s) design 
 3) Assumptions
+
+<b>ASSUMPTIONS MADE</b>:
+1) This solution is not for real-time processing and therefore it is not uses streaming
+2) The email campaign is provided in JSON files. Each JSON file contains all campaign responses.
+
 4) Write SQL to answer the following questions (Use the tables designed above) 
    - Get emails of users who opened email
    - Number of users who opened emails between 1-2 days, 2-5 days and > 5 days after email is sent. Example: If the email is sent 21st, # of users who opened email between 23rd and 26th including both 23rd and 26th
