@@ -6,6 +6,14 @@ PS: Please make necessary assumptions where necessary
 <b>DELIVERABLES</b>:
 1) Script to load the data
 2) Table(s) design 
+
+<b>DIRECTORY STRUCTURE</b>:
+
+- /config - This directory contains project configuration settings and, if needed, connectivity setting to any RDBMS
+- /data - This directory contains SQLite DB
+- /sql - This directory contains all SQL scripts
+
+
 3) Assumptions
 
     <b>ASSUMPTIONS MADE</b>:
@@ -49,14 +57,5 @@ The Python code would be adapted for PySpark.
 - #7: Spam complaints 
 
 
-<b>ASSUMPTIONS</b>:
-
-For the purpose of this exercise, SQLiteDB will be used as a backend
-
-<b>DIRECTORY STRUCTURE</b>:
-
-- config
-- sql
-- unittests
 
 
