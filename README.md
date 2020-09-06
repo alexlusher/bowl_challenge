@@ -11,6 +11,7 @@ PS: Please make necessary assumptions where necessary
 
 - /config - This directory contains project configuration settings and, if needed, connectivity setting to any RDBMS
 - /data - This directory contains SQLite DB
+- /data - This directory contains log file. In production, timestamp would be added to each log file name.
 - /sql - This directory contains all SQL scripts
 
 
@@ -40,12 +41,12 @@ PS: Please make necessary assumptions where necessary
 
 7) How would you design it if it was streaming data?
 
-<b>RESPONSE: If latency is an issue, then Kafka streaming is more appropriate than Spark streaming. Otherwise, Spark streaming would be best.</b>
+<b>RESPONSE: If latency is an issue, then Kafka or Spark streaming would more appropriate than Python processing of batch processing. Otherwise, Python would be OK.</b>
 
 The Spark-based solution for data stream would be a microservice with REST API where JSON data are processed by Spark and the processed data would be stored in datastore.
 The Python code would be adapted for PySpark.
 
-8) Any other insights you can derive from the data 
+8) Any other insights you can derive from the data? 
 
 <b>RESPONSE: The following metrics can be captured to measure email campaign funnel</b>
 - #1: Number of emails delivered
