@@ -61,13 +61,99 @@ def main(file_name):
             logging.error(msg)
             return -1
 
+        # Load Json into list of dicts
+        with open(file_name) as json_file:
+            try:
+                users_lst = []
+                campaigns_lst = []
+                stats_lst = []
+                unsubscribed_lst = []
+                json_data = json.load(json_file)
+
+                for json_row in json_data:
+
+                    curr_user_dict = {}
+                    curr_campaign_dict = {}
+                    curr_stats_dict = {}
+
+                    # create a dict of users
+                    if json_row['email_address']:
+                        curr_user_dict['user_id'] = b_string(json_row['email_address'])
+                        curr_user_dict['email_address'] = json_row['email_address']
+                    if json_row['email_unsubscribed']:
+                        curr_user_dict['email_unsubscribed'] = 1
+                    else:
+                        curr_user_dict['email_unsubscribed'] = 0
+                    users_lst.append(curr_user_dict)
+
+                    # create a dict of campaigns
+                    if json_row['campaign_name']:
+                        curr_campaign_dict['campaign_id'] = b_string(json_row['campaign_name'])
+                        curr_campaign_dict['campaign_name'] = json_row['campaign_name']
+                        campaigns_lst.append(curr_campaign_dict)
+ 
+                    # create a dict of stats
+                    curr_stats_dict['browser'] = json_row['browser']
+                    if json_row['email_bounced'] == None:
+                        curr_stats_dict['email_bounced'] = ''
+                    else:
+                        curr_stats_dict['email_bounced'] = json_row['email_bounced']
+
+                    if json_row['email_opened'] == None:
+                        curr_stats_dict['email_opened'] = ''
+                    else:
+                        curr_stats_dict['email_opened'] = json_row['email_opened']
+
+                    if json_row['email_sent'] == None:
+                        curr_stats_dict['email_sent'] = ''
+                    else:
+                        curr_stats_dict['email_sent'] = json_row['email_sent']
+
+                    if json_row['email_unsubscribed'] == None:
+                        curr_stats_dict['email_unsubscribed'] = ''
+                    else:
+                        curr_stats_dict['email_unsubscribed'] = json_row['email_unsubscribed']
+                        unsubscribed_lst.append(json_row['email_address'])
+
+                    if json_row['email_url_clicked'] == None:
+                        curr_stats_dict['email_url_clicked'] = ''
+                    else:
+                        curr_stats_dict['email_url_clicked'] = json_row['email_url_clicked']
+
+                    if json_row['user_subscribed'] == None:
+                        curr_stats_dict['user_subscribed'] = ''
+                    else:
+                        curr_stats_dict['user_subscribed'] = json_row['user_subscribed']
+
+                    curr_stats_dict['campaign_id'] = curr_campaign_dict['campaign_id']
+                    curr_stats_dict['user_id'] = curr_user_dict['user_id']
+
+                    stats_lst.append(curr_stats_dict)
+
+                # Connect to SQLite DB
+                sql_conn, curr = open_sql_cursor(sqlite_db_name)
+
+                # Get columns
+                col_user_col_list = get_columns(sql_conn, 'users')
+                cmp_user_col_list = get_columns(sql_conn, 'campaigns')
+                stats_col_list = get_columns(sql_conn, 'campaign_stats')
+
+                # Insert user list into users table
+                ret_usr_code = sql_dim_insert(curr, 'users', users_lst, col_user_col_list)
+                ret_cmp_code = sql_dim_insert(curr, 'campaigns', campaigns_lst, cmp_user_col_list)
+                ret_stat_code = sql_fact_insert(curr, 'campaign_stats', stats_lst, stats_col_list)
+                if len(unsubscribed_lst) > 0:
+                    unsub_code = sql_user_unsubscribe(curr, unsubscribed_lst, col_user_col_list)
+
+            except Exception as e:
+                msg = "Cannot process JSON data"
+                logging.error(msg)
+                ret_code = -1
+
     except Exception as e:
         msg = "Exception occurred while processing config.ini and log file info. Please check." + str(e)
         print(msg)
         return -1
-
-
-    # load json file into structure
 
     return
 
@@ -88,48 +174,5 @@ if __name__ == "__main__":
     else:
         print("ERROR: file name cannot be empty")
         ret_code = -1
-    # Load Json into list of dicts
-    with open(file_name) as json_file:
-        try:
-            users_lst = []
-            campaigns_lst = []
-            stats_lst = []
-            json_data = json.load(json_file)
-
-            from pdb import set_trace; set_trace()
-
-            for json_row in json_data:
-
-                curr_user_dict = {}
-                curr_campaign_dict = {}
-                curr_stats_dict = {}
-                # create a dict of users
-                if json_row['email_address']:
-                    curr_user_dict['user_id'] = b_string(json_row['email_address'])
-                    curr_user_dict['email_address'] = json_row['email_address']
-                    if json_row['email_unsubscribed']:
-                        curr_user_dict['email_unsubscribed'] = json_row['email_unsubscribed']
-                    users_lst.append(curr_user_dict)
-
-                # create a dict of campaigns
-                if json_row['campaign_name']:
-                    curr_campaign_dict['campaign_id'] = b_string(json_row['campaign_name'])
-                    curr_campaign_dict['campaign_name'] = json_row['campaign_name']
-                    campaigns_lst.append(curr_campaign_dict)
-                # create a dict of stats
-                curr_stats_dict['browser'] = json_row['browser']
-                curr_stats_dict['email_bounced'] = json_row['email_bounced']
-                curr_stats_dict['email_opened'] = json_row['email_opened']
-                curr_stats_dict['email_sent'] = json_row['email_sent']
-                curr_stats_dict['email_unsubscribed'] = json_row['email_unsubscribed']
-                curr_stats_dict['email_url_clicked'] = json_row['email_url_clicked']
-                curr_stats_dict['user_subscribed'] = json_row['user_subscribed']
-                curr_stats_dict['campaign_id'] = curr_campaign_dict['campaign_id']
-                curr_stats_dict['user_id'] = curr_user_dict['user_id']
-                stats_lst.append(curr_stats_dict)
-        except Exception as e:
-            msg = "Cannot process JSON data"
-            logging.error(msg)  
-            ret_code = -1      
 
     sys.exit(ret_code)

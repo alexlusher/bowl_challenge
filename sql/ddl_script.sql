@@ -4,7 +4,6 @@ CREATE TABLE users (
 user_id TEXT NOT NULL,
 email_address TEXT NOT NULL,
 email_unsubscribed INTEGER NULL,
-created TIMESTAMP NOT NULL,
 updated TIMESTAMP NOT NULL);
 
 
@@ -12,7 +11,6 @@ updated TIMESTAMP NOT NULL);
 CREATE TABLE campaigns (
 campaign_id TEXT NOT NULL,
 campaign_name TEXT NOT NULL,
-created TIMESTAMP NOT NULL,
 updated TIMESTAMP NOT NULL);
 
 # This table contains all campaign stats
@@ -27,5 +25,4 @@ email_unsubscribed INTEGER NULL,
 email_opened DATE NULL,
 email_url_clicked DATE NULL,
 user_subscribed DATE NULL,
-created TIMESTAMP NOT NULL,
 updated TIMESTAMP NOT NULL);
