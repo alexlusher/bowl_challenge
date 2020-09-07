@@ -21,7 +21,8 @@ PS: Please make necessary assumptions where necessary
     1) This solution is not for real-time processing and therefore does not streaming
     2) Each email campaign is provided in JSON files. Each JSON file contains responses for a single campaign. 
     In case of additional responses for the same campaign, they will be upserted into the database
-    3) This solution uses SQLiteDB for portability purposes. In production, it would be replaced with a full-scale RDBMS
+    3) This solution uses SQLiteDB for portability purposes. In production, it would be replaced with a full-scale RDBMS.
+    4) Due to the use of SQLiteDB, each table has only column "updated", vs typically used "created" and "updated" and does not use UPSERT operator that is not available for this version of SQLite 3.6. In production, the code would include both "created" and "updated" and the new records would be upserted to update, for instance, users who decided to get unsibscribed.
 
 4) Write SQL to answer the following questions (Use the tables designed above) 
    - Get emails of users who opened email
