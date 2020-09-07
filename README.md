@@ -17,13 +17,13 @@ PS: Please make necessary assumptions where necessary
 
 <b>TASK 3. Describe assumptions</b>
 
-    <b>ASSUMPTIONS MADE</b>:
-    1) This solution is designed for batch processing of JSON files with email campaign data, and therefore does not use streaming
-    2) Each JSON file contains responses for a single campaign. In case of additional files with responses for the same campaign, they will be appended into the database
-    3) This solution uses SQLiteDB for portability purposes. In production, it would be replaced with a full-scale RDBMS.
-    4) Due to the use of SQLiteDB, each table has only column "updated", vs typically used "created" and "updated" and does not use UPSERT operator that is not available for this version of SQLite 3.6. In production, the code would include both "created" and "updated" and the new records would be upserted to update, for instance, users who decided to get unsibscribed.
-    5) The DB design contains 3 tables - fact table "campaign_stats" and two dimension tables "users" and "campaigns". The first dimension table is needed to tag users who unsubscribed from receiving future emails and to avoid overcounting. The other dimension table "campaigns" might help to get additional campaign insights. In production, there would be more dimension tables to capture geolocation and time, etc.
-    6) The used SQL was tailored to be used with SQLiteDB and would look different for production RDBMS. It is also possible to use python library like "SQL Alchemy" to avoid rewriting SQL every time when it is necessary to switch DB.
+<b>ASSUMPTIONS MADE</b>:
+1) This solution is designed for batch processing of JSON files with email campaign data, and therefore does not use streaming
+2) Each JSON file contains responses for a single campaign. In case of additional files with responses for the same campaign, they will be appended into the database
+3) This solution uses SQLiteDB for portability purposes. In production, it would be replaced with a full-scale RDBMS.
+4) Due to the use of SQLiteDB, each table has only column "updated", vs typically used "created" and "updated" and does not use UPSERT operator that is not available for this version of SQLite 3.6. In production, the code would include both "created" and "updated" and the new records would be upserted to update, for instance, users who decided to get unsibscribed.
+5) The DB design contains 3 tables - fact table "campaign_stats" and two dimension tables "users" and "campaigns". The first dimension table is needed to tag users who unsubscribed from receiving future emails and to avoid overcounting. The other dimension table "campaigns" might help to get additional campaign insights. In production, there would be more dimension tables to capture geolocation and time, etc.
+6) The used SQL was tailored to be used with SQLiteDB and would look different for production RDBMS. It is also possible to use python library like "SQL Alchemy" to avoid rewriting SQL every time when it is necessary to switch DB.
 
 <b>TASK 4:</b>
 Write SQL to answer the following questions (Use the tables designed above) 
