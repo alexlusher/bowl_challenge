@@ -32,7 +32,7 @@ Write SQL to answer the following questions (Use the tables designed above)
    - Identify the campaign which is more successful? (Define what you think success means and write SQL) 
 
 
-<b>NOTE:</b> Used Navicat in order to create and debug the above SQL queries for SQLiteDB
+<b><i>NOTE:</i></b> Used Navicat in order to create and debug the above SQL queries for SQLiteDB
   
   
    <b>RESPONSE:</b>
