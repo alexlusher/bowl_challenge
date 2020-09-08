@@ -163,13 +163,14 @@ def main(file_name):
 ##############################################
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="JSON ingestion utility into SQLite",\
-        epilog="Example: python campaign_loader.py -c data/campaign_1.json")
-    parser.add_argument("-c", "--campaignJSON", required=True, help="Enter JSON file name with campaign data")
-    args = parser.parse_args()
-    file_name =args.campaignJSON
+    # parser = argparse.ArgumentParser(description="JSON ingestion utility into SQLite",\
+    #     epilog="Example: python campaign_loader.py -c data/campaign_1.json")
+    # parser.add_argument("-c", "--campaignJSON", required=True, help="Enter JSON file name with campaign data")
+    # args = parser.parse_args()
+    # file_name =args.campaignJSON
 
-    if len(file_name.strip()) != 0:
+    file_name = sys.argv[1]
+    if len(file_name) != 0:
         ret_code = main(file_name)
     else:
         print("ERROR: file name cannot be empty")
