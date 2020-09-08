@@ -10,7 +10,7 @@ COPY . /opt/app-root/src
 
 RUN chown -R $USER:$USER .
 
-# RUN pip install --upgrade pip
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-# ENTRYPOINT ["python", "campaign_loader.py"]
-# CMD ["campaign_data.json"]
+ENTRYPOINT ["python", "campaign_loader.py"]
+CMD ["campaign_data.json"]
