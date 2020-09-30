@@ -11,7 +11,7 @@ PS: Please make necessary assumptions where necessary
 
 - /config - This directory contains project configuration settings and, if needed, connectivity setting to any RDBMS
 - /data - This directory contains SQLite DB
-- /data - This directory contains log file. In production, timestamp would be added to each log file name.
+- /logs - This directory contains log file. In production, timestamp would be added to each log file name.
 - /sql - This directory contains all SQL scripts, including DDL and queries to answer Question 4.
 
 
